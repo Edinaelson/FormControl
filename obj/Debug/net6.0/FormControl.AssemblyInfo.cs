@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FormControl")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ae07a9bacdf201b0625116950d5b5a0dc428a35")]
 [assembly: System.Reflection.AssemblyProductAttribute("FormControl")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FormControl")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

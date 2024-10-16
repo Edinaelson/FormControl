@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using FormControl.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FormControl.Data
@@ -9,5 +10,10 @@ namespace FormControl.Data
             : base(options)
         {
         }
+
+
+        public DbSet<Produto> produtos { get; set; }
+        public DbSet<Fornecedor> fornecedores { get; set;}
+       
     }
 }
