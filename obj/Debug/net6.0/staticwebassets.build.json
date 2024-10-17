@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Inc4R07guqKWOu3ZZKa8gWqvXNICowyBuOYsPUxl2/E=",
+  "Hash": "NAhP5Eo/3Z7Bre03RFG1NsUW9WzTjcxSY6/YvT8G/gY=",
   "Source": "FormControl",
   "BasePath": "_content/FormControl",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\images\\produtos\\xbox.jpeg",
+      "SourceId": "FormControl",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\",
+      "BasePath": "_content/FormControl",
+      "RelativePath": "images/produtos/xbox.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\produtos\\xbox.jpeg"
     },
     {
       "Identity": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\js\\site.js",

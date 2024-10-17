@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FormControl.Models
 {
-    public class Produto
+    public class Produto : Entity
     {
 
         public Guid FornecedorId { get; set; }
@@ -22,13 +22,13 @@ namespace FormControl.Models
 
         //[Required(ErrorMessage = "O campo {0} é obrigatorio")]
         [Column(TypeName = "decimal(18,2)")]
-        public decimal Valor { get; set; }
+        public decimal? Valor { get; set; }
 
-        public DateTime DataCadastro { get; set; }
+        public DateTime? DataCadastro { get; set; }
         public bool Ativo { get; set; }
 
         /* EF Relation */
-        public Fornecedor Fornecedor { get; set; }
+        public Fornecedor? Fornecedores { get; set; }
 
     }
 }

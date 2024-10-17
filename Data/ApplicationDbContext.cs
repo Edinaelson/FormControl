@@ -12,8 +12,8 @@ namespace FormControl.Data
         }
 
 
-        public DbSet<Produto> produtos { get; set; }
-        public DbSet<Fornecedor> fornecedores { get; set;}
+        public DbSet<Produto>? Produtos { get; set; }
+        public DbSet<Fornecedor>? Fornecedores { get; set;}
        
     }
 }

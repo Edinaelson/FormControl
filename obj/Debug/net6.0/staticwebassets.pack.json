@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\images\\produtos\\xbox.jpeg",
+      "PackagePath": "staticwebassets\\images\\produtos\\xbox.jpeg"
+    },
+    {
       "Id": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
