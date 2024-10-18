@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FormControl.Data;
 using FormControl.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace FormControl.Pages.Produtos
 {
@@ -42,12 +43,36 @@ namespace FormControl.Pages.Produtos
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IFormFile Imagem)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
+
+            /* Tratamento de imagens*/
+            //definir onde o caminho da imagem sera salva
+            var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/produtos");
+            var nomeArquivo = Path.GetFileName(Imagem.FileName);
+            var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
+            //cria a pasta se ela não existir
+            if (!Directory.Exists(caminhoPasta))
+            {
+                Directory.CreateDirectory(caminhoPasta);
+            }
+
+            //salvar arquivo no caminho especificado
+            using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+            {
+                await Imagem.CopyToAsync(stream);
+            }
+
+            //salvando imagem no banco
+
+            Produto.Imagem = $"/images/produtos/{nomeArquivo}";
+            /* Fim Tratamento de imagens*/
+
 
             _context.Attach(Produto).State = EntityState.Modified;
 

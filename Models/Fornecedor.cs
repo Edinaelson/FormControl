@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.DotNet.Scaffolding.Shared.Messaging;
+using System.ComponentModel.DataAnnotations;
 
 namespace FormControl.Models
 {
@@ -8,8 +9,9 @@ namespace FormControl.Models
         [StringLength(100, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 2)]
         public string? Nome { get; set; }
 
-        [StringLength(14, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 11)]
-        public string? Documento { get; set; }
+        [Required(ErrorMessage ="Campo requerido")]
+        [StringLength(18, ErrorMessage = "O campo {0} precisa ter entre {2} e {1} caracteres", MinimumLength = 11)]
+        public string Documento { get; set; }
 
         public TipoFornecedor TipoFornecedor { get; set; }
 
@@ -17,5 +19,24 @@ namespace FormControl.Models
         /*EF Relations */
         public IEnumerable<Produto>? Produtos { get; set; }
 
+        public string FormatarDocumento()
+        {
+           
+            if(Documento.Length == 11)
+            {
+                return Convert.ToUInt64(Documento).ToString(@"000\.000\.000\-00");
+            }
+            else if (Documento.Length == 14)
+            {
+                // Formatar como CNPJ
+                return Convert.ToUInt64(Documento).ToString(@"00\.000\.000\/0000\-00");
+            }
+
+            return Documento;
+        }
+
+
+
     }
+
 }

@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\images\\produtos\\celular.jpg",
+      "PackagePath": "staticwebassets\\images\\produtos\\celular.jpg"
+    },
+    {
+      "Id": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\images\\produtos\\gabinete.jpg",
+      "PackagePath": "staticwebassets\\images\\produtos\\gabinete.jpg"
+    },
+    {
+      "Id": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\images\\produtos\\tv.jpg",
+      "PackagePath": "staticwebassets\\images\\produtos\\tv.jpg"
+    },
+    {
       "Id": "C:\\dev\\Estudo de MVC core\\FormControl\\FormControl\\wwwroot\\images\\produtos\\xbox.jpeg",
       "PackagePath": "staticwebassets\\images\\produtos\\xbox.jpeg"
     },
