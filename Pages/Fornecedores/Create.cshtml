@@ -1,0 +1,103 @@
+﻿@page
+@using Microsoft.Extensions.Hosting
+@model FormControl.Pages.Fornecedores.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Fornecedor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" id="fornecedorForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Fornecedor.Nome" class="control-label"></label>
+                <input asp-for="Fornecedor.Nome" class="form-control" />
+                <span asp-validation-for="Fornecedor.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fornecedor.Documento" class="control-label"></label>
+                <input asp-for="Fornecedor.Documento" class="form-control" id="documento"/>
+                <span asp-validation-for="Fornecedor.Documento" class="text-danger" ></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Fornecedor.TipoFornecedor" class="control-label"></label>
+                <select asp-for="Fornecedor.TipoFornecedor" class="form-control">
+                    <option value="1">Pessoa Fisica</option>
+                    <option value="2">Pessoa Juridica</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script>
+
+        //TODO estudar como funciona o jquery no razor pages
+
+        $(document).ready(function () {
+            $('#documento').mask('000.000.000-00', { reverse: true });
+            $('#documento').mask('00.000.000/0000-00', { reverse: true });
+        });
+
+
+
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    
+    document.getElementById('fornecedorForm').addEventListener('submit', function () {
+        var documentoInput = document.getElementById('documento');
+        // Remove todos os caracteres não numéricos
+        documentoInput.value = documentoInput.value.replace(/\D/g, ''); // \D corresponde a qualquer coisa que não seja número
+    });
+
+</script>
+
+<script>
+    // Aplica máscara enquanto digita
+    /*document.getElementById('documentoInput').addEventListener('input', function (e) {
+        var value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+        var length = value.length;
+
+        if (length <= 11) {
+            // Máscara de CPF
+            value = value.replace(/(\d{3})(\d{1,3})/, '$1.$2');
+            value = value.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2-$3');
+            value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, '$1.$2.$3-$4');
+        } else {
+            // Máscara de CNPJ
+            value = value.replace(/^(\d{2})(\d)/, '$1.$2');
+            value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3');
+            value = value.replace(/\.(\d{3})(\d)/, '.$1/$2');
+            value = value.replace(/(\d{4})(\d{1,2})$/, '$1-$2');
+        }
+
+        e.target.value = value;
+    });
+
+    // Remove máscara ao submeter o formulário
+    document.getElementById('fornecedorForm').addEventListener('submit', function () {
+        var documentoInput = document.getElementById('documentoInput');
+        documentoInput.value = documentoInput.value.replace(/\D/g, ''); // Remove pontos, traços, barras, etc.
+    }); */
+
+    
+</script>
