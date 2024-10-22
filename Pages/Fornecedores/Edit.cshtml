@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Fornecedor.Documento" class="control-label"></label>
-                <input asp-for="Fornecedor.Documento" class="form-control" />
+                <input asp-for="Fornecedor.Documento" class="form-control" id="documento"/>
                 <span asp-validation-for="Fornecedor.Documento" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -32,7 +32,7 @@
             </div>
             <input type="hidden" asp-for="Fornecedor.Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" id="fornecedorForm" />
             </div>
         </form>
     </div>
@@ -42,6 +42,31 @@
     <a asp-page="./Index">Back to List</a>
 </div>
 
+
 @section Scripts {
+
+    <script>
+
+        //TODO estudar como funciona o jquery no razor pages
+
+
+        $(document).ready(function () {
+            //duas mascara nao pegam ao mesmo tempo no mesmo input com o mesmo id
+            $('#documento').mask('000.000.000-00', { reverse: true });
+            $('#documento').mask('00.000.000/0000-00', { reverse: true });
+        });
+
+    </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<script>
+
+    document.getElementById('fornecedorForm').addEventListener('submit', function () {
+        var documentoInput = document.getElementById('documento');
+        // Remove todos os caracteres não numéricos
+        documentoInput.value = documentoInput.value.replace(/\D/g, ''); // \D corresponde a qualquer coisa que não seja número
+    });
+
+</script>

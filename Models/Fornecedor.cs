@@ -22,7 +22,7 @@ namespace FormControl.Models
         public string FormatarDocumento()
         {
 
-            if (Documento.Length >= 11)
+            if (Documento.Length == 11)
             {
                 return Convert.ToUInt64(Documento.Replace(".","").Replace("/","").Replace("-","")).ToString(@"000\.000\.000\-00");
             }

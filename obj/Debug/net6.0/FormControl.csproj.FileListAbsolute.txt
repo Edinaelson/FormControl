@@ -287,3 +287,4 @@ C:\dev\Estudo de MVC core\FormControl\FormControl\obj\Debug\net6.0\staticwebasse
 C:\dev\Estudo de MVC core\FormControl\FormControl\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.FormControl.props
 C:\dev\Estudo de MVC core\FormControl\FormControl\obj\Debug\net6.0\staticwebassets.pack.json
 C:\dev\Estudo de MVC core\FormControl\FormControl\bin\Debug\net6.0\CsvHelper.dll
+C:\dev\Estudo de MVC core\FormControl\FormControl\obj\Debug\net6.0\FormControl.sourcelink.json
